@@ -14,4 +14,9 @@ install:
 edit:
 	$(EDITOR) "$(MACRO_DIR)"/*
 
-.PHONY: source install edit
+register:
+	git add "$(MACRO_DIR)"/*.bas "$(MACRO_DIR)"/*.cls "$(MACRO_DIR)"/*.frm
+	git commit -m "Update VBA sources"
+	# git push
+
+.PHONY: source install edit register
