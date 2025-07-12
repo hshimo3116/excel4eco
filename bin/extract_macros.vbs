@@ -29,14 +29,17 @@ Dim protection
 On Error Resume Next
 protection = workbook.VBProject.Protection
 If Err.Number <> 0 Then
-    WScript.Echo "VBProject is inaccessible. Enable 'Trust access to the VBA project object model'."
+    WScript.Echo "VBProject is inaccessible."
+    WScript.Echo "Check that 'Trust access to the VBA project object model' is enabled." _
+        & " Error " & Err.Number & ": " & Err.Description
     workbook.Close False
     excelApp.Quit
     WScript.Quit 1
 End If
 On Error GoTo 0
 If protection <> 0 Then
-    WScript.Echo "VBA project is protected. Unlock the project before exporting."
+    WScript.Echo "VBA project is protected (Protection=" & protection & ")."
+    WScript.Echo "Remove the project password before exporting."
     workbook.Close False
     excelApp.Quit
     WScript.Quit 1
@@ -53,10 +56,21 @@ For Each vbComp In workbook.VBProject.VBComponents
         Case Else
             ext = ".txt"
     End Select
+    Dim fileName
+    fileName = vbComp.Name
+    fileName = Replace(fileName, "\\", "_")
+    fileName = Replace(fileName, "/", "_")
+    fileName = Replace(fileName, ":", "_")
+    fileName = Replace(fileName, "*", "_")
+    fileName = Replace(fileName, "?", "_")
+    fileName = Replace(fileName, Chr(34), "_")
+    fileName = Replace(fileName, "<", "_")
+    fileName = Replace(fileName, ">", "_")
+    fileName = Replace(fileName, "|", "_")
     On Error Resume Next
-    vbComp.Export fso.BuildPath(outDir, vbComp.Name & ext)
+    vbComp.Export fso.BuildPath(outDir, fileName & ext)
     If Err.Number <> 0 Then
-        WScript.Echo "Failed to export " & vbComp.Name & ": " & Err.Description
+        WScript.Echo "Failed to export " & vbComp.Name & " (" & Err.Number & ")" & ": " & Err.Description
         Err.Clear
     End If
     On Error GoTo 0

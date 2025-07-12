@@ -2,6 +2,11 @@
 # Office temporary files
 ~$*
 
+# Ignore workbook binaries and logs
+*.xlsm
+*.tmp
+logs/
+
 # Access database lock files (laccdb, ldb)
 *.[lL][aA][cC][cC][dD][bB]
 *.[lL][dD][bB]
