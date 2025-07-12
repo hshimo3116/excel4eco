@@ -1,7 +1,7 @@
 # Makefile for excel4eco
 MAKEFILE_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
-EXCEL_FILE ?= $(MAKEFILE_DIR)workbook.xlsm
-MACRO_DIR ?= lib
+EXCEL_FILE ?= $(MAKEFILE_DIR)xl/workbook.xlsm
+MACRO_DIR ?= src
 POWERSHELL ?= $(MAKEFILE_DIR)bin/powershell.sh
 
 source:
