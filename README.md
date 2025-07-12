@@ -32,6 +32,7 @@ VBA プロジェクトがパスワードで保護されていると
 3. `make edit` で `src` 内の `.bas` `.cls` `.frm` を開きます。`$EDITOR` が未設定の場合は Makefile で定義された `EDITOR` 変数の既定値 `emacs -nw` が使用されます。
    `bin/powershell.sh bin/install_macros.ps1 "$(EXCEL_FILE)" "$(MACRO_DIR)"`
    と実行できます。
+4. `make register` で `src` の変更を Git にコミットします。必要に応じて `git push` してください。
 
 ### MSYS2 シェルでの利用
 MSYS2 環境では Windows 側の `powershell.exe` を直接実行できるよう
