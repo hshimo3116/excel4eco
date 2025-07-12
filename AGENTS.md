@@ -38,7 +38,7 @@
 
 ### 対象ファイル及びディレクトリ
 - ファイル AGENTS.md README.md Makefile 実行ファイル
-- ディレクトリ bin/ lib/
+- ディレクトリ bin/ src/ xl/
 - 無視するファイル・ディレクトリ .git/ logs/
 
 ## Codexエージェントへの指示
