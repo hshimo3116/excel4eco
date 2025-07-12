@@ -6,7 +6,8 @@
 `make install` で `lib` のコードを `EXCEL_FILE` に組み込みます。
 
 ## 使い方
-1. `EXCEL_FILE` 変数に対象の `.xlsm` ファイルを指定します。
+1. `EXCEL_FILE` 変数に対象の `.xlsm` ファイルを指定します。指定しない場合は
+   Makefile と同じディレクトリにある `workbook.xlsm` を使用します。
 2. `make source` を実行してマクロを抽出します。
 3. `lib` 内の `.bas` `.cls` `.frm` を編集します。
 4. `make install` でマクロを再度ファイルへ組み込みます。
