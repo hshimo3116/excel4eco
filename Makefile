@@ -15,6 +15,9 @@ print-vars:
 	@echo "POWERSHELL   = $(POWERSHELL)"
 	@echo "EDITOR       = $(EDITOR)"
 
+sss:
+	powershell bin/extract_macros.ps1 "D:\hs\home\git\excel4eco\xl\workbook.xlsm" "D:\hs\home\git\excel4eco\src"
+
 source:
 	$(POWERSHELL) bin/extract_macros.ps1 "$(EXCEL_FILE)" "$(MACRO_DIR)"
 
