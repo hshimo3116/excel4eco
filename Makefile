@@ -8,11 +8,12 @@ EDITOR ?= emacs -nw
 # 変数一覧を表示するターゲット
 print-vars:
 	@echo "Defined Makefile variables:"
+	@echo "MAKEFILE_LIST= $(MAKEFILE_DIR)"
 	@echo "MAKEFILE_DIR = $(MAKEFILE_DIR)"
-	@echo "EXCEL_FILE 　= $(EXCEL_FILE)"
-	@echo "MACRO_DIR  　= $(MACRO_DIR)"
-	@echo "POWERSHELL 　= $(POWERSHELL)"
-	@echo "EDITOR     　= $(EDITOR)"
+	@echo "EXCEL_FILE   = $(EXCEL_FILE)"
+	@echo "MACRO_DIR    = $(MACRO_DIR)"
+	@echo "POWERSHELL   = $(POWERSHELL)"
+	@echo "EDITOR       = $(EDITOR)"
 
 source:
 	$(POWERSHELL) bin/extract_macros.ps1 "$(EXCEL_FILE)" "$(MACRO_DIR)"
