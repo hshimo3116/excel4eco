@@ -1,17 +1,18 @@
 Attribute VB_Name = "Module9"
+Option Explicit
 Sub Auto_Open()
-Attribute Auto_Open.VB_Description = "ƒ}ƒNƒ‹L˜^“ú : 2009/2/2  ƒ†[ƒU[–¼ : ŒQ”nŒ§’¡"
+Attribute Auto_Open.VB_Description = "ãƒã‚¯ãƒ­è¨˜éŒ²æ—¥ : 2009/2/2  ãƒ¦ãƒ¼ã‚¶ãƒ¼å : ç¾¤é¦¬çœŒåº"
 Attribute Auto_Open.VB_ProcData.VB_Invoke_Func = " \n14"
 '
 ' Auto_Open Macro
-' ƒ}ƒNƒ‹L˜^“ú : 2009/2/2  ƒ†[ƒU[–¼ : ŒQ”nŒ§’¡
+' ãƒã‚¯ãƒ­è¨˜éŒ²æ—¥ : 2009/2/2  ãƒ¦ãƒ¼ã‚¶ãƒ¼å : ç¾¤é¦¬çœŒåº
 '
 
 '
     Dim msg As String
 
-    msg = "ƒGƒRƒtƒ@[ƒ}Œv‰æ‘ŒvZ•\‚Å‚·B" & vbNewLine & "g‚¢‚â‚·‚­‚Í‚ ‚è‚Ü‚¹‚ñA‚ ‚µ‚©‚ç‚¸"
+    msg = "ã‚¨ã‚³ãƒ•ã‚¡ãƒ¼ãƒè¨ˆç”»æ›¸è¨ˆç®—è¡¨ã§ã™ã€‚" & vbNewLine & "ä½¿ã„ã‚„ã™ãã¯ã‚ã‚Šã¾ã›ã‚“ã€ã‚ã—ã‹ã‚‰ãš"
 
-    MsgBox msg, vbOKOnly + vbInformation, "‚±‚ÌƒV[ƒg‚ÍEEE"
+    MsgBox msg, vbOKOnly + vbInformation, "ã“ã®ã‚·ãƒ¼ãƒˆã¯ãƒ»ãƒ»ãƒ»"
     
 End Sub

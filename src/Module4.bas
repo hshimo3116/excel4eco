@@ -1,34 +1,35 @@
 Attribute VB_Name = "Module4"
+Option Explicit
 Sub ExportAllVBAModules()
     Dim vbComp As Object
     Dim exportPath As String
     Dim basePath As String
     Dim fso As Object
 
-    ' ƒtƒ@ƒCƒ‹ƒVƒXƒeƒ€ƒIƒuƒWƒFƒNƒg‚Ìì¬
+    ' ãƒ•ã‚¡ã‚¤ãƒ«ã‚·ã‚¹ãƒ†ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ä½œæˆ
     Set fso = CreateObject("Scripting.FileSystemObject")
 
-    ' ‚±‚ÌƒuƒbƒN‚ÌƒpƒX‚ğæ“¾
+    ' ã“ã®ãƒ–ãƒƒã‚¯ã®ãƒ‘ã‚¹ã‚’å–å¾—
     basePath = ThisWorkbook.Path
     If basePath = "" Then
-        MsgBox "‚±‚ÌƒuƒbƒN‚Í•Û‘¶‚³‚ê‚Ä‚¢‚Ü‚¹‚ñBæ‚É•Û‘¶‚µ‚Ä‚­‚¾‚³‚¢B", vbExclamation
+        MsgBox "ã“ã®ãƒ–ãƒƒã‚¯ã¯ä¿å­˜ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚å…ˆã«ä¿å­˜ã—ã¦ãã ã•ã„ã€‚", vbExclamation
         Exit Sub
     End If
 
-    ' ModulesƒtƒHƒ‹ƒ_‚Ìì¬
+    ' Modulesãƒ•ã‚©ãƒ«ãƒ€ã®ä½œæˆ
     exportPath = basePath & "\Modules"
     If Not fso.FolderExists(exportPath) Then
         fso.CreateFolder exportPath
     End If
 
-    ' ƒ‚ƒWƒ…[ƒ‹‚ÌƒGƒNƒXƒ|[ƒg
+    ' ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã®ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆ
     For Each vbComp In ThisWorkbook.VBProject.VBComponents
         Select Case vbComp.Type
-            Case 1, 2, 3 ' •W€ƒ‚ƒWƒ…[ƒ‹AƒNƒ‰ƒXAƒtƒH[ƒ€
+            Case 1, 2, 3 ' æ¨™æº–ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã€ã‚¯ãƒ©ã‚¹ã€ãƒ•ã‚©ãƒ¼ãƒ 
                 vbComp.Export exportPath & "\" & vbComp.Name & ".bas"
         End Select
     Next
 
-    MsgBox "VBAƒR[ƒh‚ÌƒGƒNƒXƒ|[ƒg‚ªŠ®—¹‚µ‚Ü‚µ‚½B" & vbCrLf & "•Û‘¶æ: " & exportPath, vbInformation
+    MsgBox "VBAã‚³ãƒ¼ãƒ‰ã®ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆãŒå®Œäº†ã—ã¾ã—ãŸã€‚" & vbCrLf & "ä¿å­˜å…ˆ: " & exportPath, vbInformation
 End Sub
 

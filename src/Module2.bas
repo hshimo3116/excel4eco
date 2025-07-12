@@ -1,13 +1,14 @@
 Attribute VB_Name = "Module2"
+Option Explicit
 
 Sub Mokuji()
       Dim i As Integer
    
-      '目次用一時シート追加
+      '逶ｮ谺｡逕ｨ荳譎ゅす繝ｼ繝郁ｿｽ蜉
       Worksheets.Add before:=Worksheets(1)
    
-      '目次作成
-      Range("A1").value = "---目次---"
+      '逶ｮ谺｡菴懈��
+      Range("A1").value = "---逶ｮ谺｡---"
       For i = 2 To Worksheets.Count
             Cells(i, 1).value = Worksheets(i).Name
             ActiveSheet.Hyperlinks.Add Anchor:=Cells(i, 1), _

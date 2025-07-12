@@ -1,10 +1,11 @@
 Attribute VB_Name = "Module8"
+Option Explicit
 Sub PrintAll()
-Attribute PrintAll.VB_Description = "ƒ}ƒNƒ‹L˜^“ú : 2009/1/30  ƒ†[ƒU[–¼ : ŒQ”nŒ§’¡"
+Attribute PrintAll.VB_Description = "ãƒã‚¯ãƒ­è¨˜éŒ²æ—¥ : 2009/1/30  ãƒ¦ãƒ¼ã‚¶ãƒ¼å : ç¾¤é¦¬çœŒåº"
 Attribute PrintAll.VB_ProcData.VB_Invoke_Func = "P\n14"
 '
 ' Macro3 Macro
-' ƒ}ƒNƒ‹L˜^“ú : 2009/1/30  ƒ†[ƒU[–¼ : ŒQ”nŒ§’¡
+' ãƒã‚¯ãƒ­è¨˜éŒ²æ—¥ : 2009/1/30  ãƒ¦ãƒ¼ã‚¶ãƒ¼å : ç¾¤é¦¬çœŒåº
 '
 ' Keyboard Shortcut: Ctrl+Shift+P
 '
