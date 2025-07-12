@@ -32,4 +32,9 @@ VBA プロジェクトがパスワードで保護されていると
    `powershell -ExecutionPolicy Bypass -File bin/install_macros.ps1 "$(EXCEL_FILE)" "$(MACRO_DIR)"`
    と実行してください。
 
+### MSYS2 シェルでの利用
+MSYS2 環境から VBS または PowerShell スクリプトを実行する際は、Windows の
+`cscript.exe` と `powershell.exe` を呼び出せれば動作します。ターミナルの挙動に
+問題がある場合は `winpty` を併用してください。
+
 現在のバージョンは `VERSION` ファイルを参照してください。
