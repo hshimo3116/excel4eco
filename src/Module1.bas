@@ -2,30 +2,34 @@ Attribute VB_Name = "Module1"
 Sub Auto_Open()
 '
 ' Auto_Open Macro
-' ƒ}ƒNƒ‹L˜^“ú : 2009/2/2  ƒ†[ƒU[–¼ : shimo-hi
+' ubNJÛ‚Ésé‰
+' ConfigV[gÌİ’ğ–¼‘O`É”f
+' ConfigV[gç–¼O`Ç‚İİƒ[NubNÖ“o^
+' A=O B=l C=QÆ”ÍˆÍ‚ğ—˜—p DÖŒÊo
+' ãƒã‚¯ãƒ­è¨˜éŒ²æ—¥ : 2009/2/2  ãƒ¦ãƒ¼ã‚¶ãƒ¼å : shimo-hi
 '
 
 '
     Dim msg As String
 
-    msg = "ƒGƒRƒtƒ@[ƒ}Œv‰æ‘ŒvZ•\‚Å‚·B" & vbNewLine & "g‚¢‚â‚·‚­‚Í‚ ‚è‚Ü‚¹‚ñA‚ ‚µ‚©‚ç‚¸"
+    msg = "ã‚¨ã‚³ãƒ•ã‚¡ãƒ¼ãƒè¨ˆç”»æ›¸è¨ˆç®—è¡¨ã§ã™ã€‚" & vbNewLine & "ä½¿ã„ã‚„ã™ãã¯ã‚ã‚Šã¾ã›ã‚“ã€ã‚ã—ã‹ã‚‰ãš"
 
-    MsgBox msg, vbOKOnly + vbInformation, "‚±‚ÌƒV[ƒg‚ÍEEE"
-    Call –¼‘O’è‹`_ConfigƒV[ƒg‚©‚çˆêŠ‡“o˜^
+    MsgBox msg, vbOKOnly + vbInformation, "ã“ã®ã‚·ãƒ¼ãƒˆã¯ãƒ»ãƒ»ãƒ»"
+    Call åå‰å®šç¾©_Configã‚·ãƒ¼ãƒˆã‹ã‚‰ä¸€æ‹¬ç™»éŒ²
     
 End Sub
 
 Function GetWorkbookPath() As String
-    ' •Û‘¶‚³‚ê‚Ä‚¢‚éƒuƒbƒN‚ÌƒpƒX‚ğæ“¾
+    ' ä¿å­˜ã•ã‚Œã¦ã„ã‚‹ãƒ–ãƒƒã‚¯ã®ãƒ‘ã‚¹ã‚’å–å¾—
     If ThisWorkbook.Path <> "" Then
         GetWorkbookPath = ThisWorkbook.Path
     Else
-        GetWorkbookPath = "–¢•Û‘¶"
+        GetWorkbookPath = "æœªä¿å­˜"
     End If
 End Function
 
 
-Sub –¼‘O’è‹`_ConfigƒV[ƒg‚©‚çˆêŠ‡“o˜^()
+Sub åå‰å®šç¾©_Configã‚·ãƒ¼ãƒˆã‹ã‚‰ä¸€æ‹¬ç™»éŒ²()
     Dim ws As Worksheet
     Dim wb As Workbook
     Dim i As Long
@@ -35,31 +39,31 @@ Sub –¼‘O’è‹`_ConfigƒV[ƒg‚©‚çˆêŠ‡“o˜^()
     Set wb = ThisWorkbook
     Set ws = wb.Sheets("config")
     
-    i = 2 ' © ƒwƒbƒ_[si1s–Új‚ğƒXƒLƒbƒv
+    i = 2 ' â† ãƒ˜ãƒƒãƒ€ãƒ¼è¡Œï¼ˆ1è¡Œç›®ï¼‰ã‚’ã‚¹ã‚­ãƒƒãƒ—
     
     Do While ws.Cells(i, 1).value <> ""
         nm = Trim(ws.Cells(i, 1).value)
-        val = Trim(ws.Cells(i, 2).Formula)     ' B—ñF’l
-        refersTo = Trim(ws.Cells(i, 3).Formula) ' C—ñFQÆ”ÍˆÍ
+        val = Trim(ws.Cells(i, 2).Formula)     ' Båˆ—ï¼šå€¤
+        refersTo = Trim(ws.Cells(i, 3).Formula) ' Cåˆ—ï¼šå‚ç…§ç¯„å›²
         
-        ' –¼‘O‚ª‹ó”’‚Ü‚½‚Í–³Œø‚È‚çƒXƒLƒbƒv
+        ' åå‰ãŒç©ºç™½ã¾ãŸã¯ç„¡åŠ¹ãªã‚‰ã‚¹ã‚­ãƒƒãƒ—
         If nm <> "" Then
-            ' “¯–¼‚ª‚ ‚ê‚Îíœiã‘‚«‘Î‰j
+            ' åŒåãŒã‚ã‚Œã°å‰Šé™¤ï¼ˆä¸Šæ›¸ãå¯¾å¿œï¼‰
             On Error Resume Next
             wb.Names(nm).Delete
             On Error GoTo 0
             
-            ' –¼‘O’è‹`FB—ñ—DæAŸ‚ÉC—ñ
+            ' åå‰å®šç¾©ï¼šBåˆ—å„ªå…ˆã€æ¬¡ã«Cåˆ—
             If val <> "" Then
                 wb.Names.Add Name:=nm, refersTo:=val
             ElseIf refersTo <> "" Then
                 wb.Names.Add Name:=nm, refersTo:=refersTo
             End If
             
-            ' D—ñF’è‹`‚³‚ê‚½–¼‘O‚ÌQÆæi•¶š—ñ•\¦j
+            ' Dåˆ—ï¼šå®šç¾©ã•ã‚ŒãŸåå‰ã®å‚ç…§å…ˆï¼ˆæ–‡å­—åˆ—è¡¨ç¤ºï¼‰
             On Error Resume Next
             If wb.Names(nm).RefersToRange Is Nothing Then
-                ' ’è”‚È‚Ç‚ÅQÆ‚ª‚È‚¢ê‡
+                ' å®šæ•°ãªã©ã§å‚ç…§ãŒãªã„å ´åˆ
                 cellRef = wb.Names(nm).refersTo
             Else
                 cellRef = wb.Names(nm).RefersToRange.Address(External:=True)
@@ -71,6 +75,6 @@ Sub –¼‘O’è‹`_ConfigƒV[ƒg‚©‚çˆêŠ‡“o˜^()
         i = i + 1
     Loop
     
-    MsgBox "–¼‘O’è‹`‚ªŠ®—¹‚µ‚Ü‚µ‚½B", vbInformation
+    MsgBox "åå‰å®šç¾©ãŒå®Œäº†ã—ã¾ã—ãŸã€‚", vbInformation
 End Sub
 
