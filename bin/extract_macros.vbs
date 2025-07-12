@@ -12,6 +12,10 @@ xlsmFile = args(0)
 outDir = args(1)
 
 Set fso = CreateObject("Scripting.FileSystemObject")
+If Not fso.FileExists(xlsmFile) Then
+    WScript.Echo "File not found: " & xlsmFile
+    WScript.Quit 1
+End If
 If Not fso.FolderExists(outDir) Then
     fso.CreateFolder outDir
 End If
