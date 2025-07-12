@@ -5,7 +5,7 @@
 # Ignore workbook binaries and logs
 *.xlsm
 *.tmp
-logs/
+# logs/
 
 # Access database lock files (laccdb, ldb)
 *.[lL][aA][cC][cC][dD][bB]
