@@ -24,12 +24,14 @@ VBA プロジェクトがパスワードで保護されていると
    Makefile と同じディレクトリにある `workbook.xlsm` を使用します。
    指定したファイルが存在しない場合、各VBSスクリプトはエラーを表示して終了します。
    パスに空白が含まれる場合は、変数値をダブルクオートで囲んでください。
-2. `make source` を実行してマクロを抽出します。VBS の代わりに
+2. `make source` を実行してマクロを抽出します。PowerShell を使う場合は
+   `make ps_source` を実行するか、
    `powershell -ExecutionPolicy Bypass -File bin/extract_macros.ps1 "$(EXCEL_FILE)" "$(MACRO_DIR)"`
-   を使うこともできます。
+   を手動で実行します。
 3. `make edit` で `lib` 内の `.bas` `.cls` `.frm` を開きます。`$EDITOR` が未設定の場合は `emacs -nw` が使用されます。
 4. `make install` でマクロを再度ファイルへ組み込みます。PowerShell を使う場合は
+   `make ps_install` を実行するか、
    `powershell -ExecutionPolicy Bypass -File bin/install_macros.ps1 "$(EXCEL_FILE)" "$(MACRO_DIR)"`
-   と実行してください。
+   を手動で実行します。
 
 現在のバージョンは `VERSION` ファイルを参照してください。
