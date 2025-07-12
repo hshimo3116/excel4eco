@@ -11,4 +11,4 @@ install:
 	$(POWERSHELL) bin/install_macros.ps1 "$(EXCEL_FILE)" "$(MACRO_DIR)"
 
 edit:
-	$(EDITOR) $(MACRO_DIR)/*
+	$(EDITOR) "$(MACRO_DIR)"/*
