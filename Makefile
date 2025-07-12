@@ -1,5 +1,6 @@
 # Makefile for excel4eco
-EXCEL_FILE ?= workbook.xlsm
+MAKEFILE_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+EXCEL_FILE ?= $(MAKEFILE_DIR)workbook.xlsm
 MACRO_DIR ?= lib
 
 source:
