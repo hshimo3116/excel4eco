@@ -13,3 +13,5 @@ install:
 
 edit:
 	$(EDITOR) "$(MACRO_DIR)"/*
+
+.PHONY: source install edit
