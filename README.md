@@ -29,8 +29,7 @@ VBA プロジェクトがパスワードで保護されていると
    `bin/powershell.sh` が呼び出されます。直接実行する場合は
    `bin/powershell.sh bin/extract_macros.ps1 "$(EXCEL_FILE)" "$(MACRO_DIR)"`
    を利用してください。
-3. `make edit` で `src` 内の `.bas` `.cls` `.frm` を開きます。`$EDITOR` が未設定の場合は `emacs -nw` が使用されます。
-4. `make install` でマクロを再度ファイルへ組み込みます。同様に
+3. `make edit` で `src` 内の `.bas` `.cls` `.frm` を開きます。`$EDITOR` が未設定の場合は Makefile で定義された `EDITOR` 変数の既定値 `emacs -nw` が使用されます。
    `bin/powershell.sh bin/install_macros.ps1 "$(EXCEL_FILE)" "$(MACRO_DIR)"`
    と実行できます。
 
