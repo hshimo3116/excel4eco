@@ -1,5 +1,6 @@
 Attribute VB_Name = "Module02"
-Sub Word‚ÖˆêŠ‡·‚µ‚İˆ—4()
+Option Explicit
+Sub Wordã¸ä¸€æ‹¬å·®ã—è¾¼ã¿å‡¦ç†4()
     Dim wdApp As Object
     Dim wdDoc As Object
     Dim templatePath As String
@@ -9,55 +10,55 @@ Sub Word‚ÖˆêŠ‡·‚µ‚İˆ—4()
     Dim tag As String
     Dim value As String
 
-    ' ConfƒV[ƒg‚©‚çİ’è’l‚ğæ“¾i2s–ÚˆÈ~j
+    ' Confã‚·ãƒ¼ãƒˆã‹ã‚‰è¨­å®šå€¤ã‚’å–å¾—ï¼ˆ2è¡Œç›®ä»¥é™ï¼‰
     With Sheets("Conf")
         templatePath = .Range("B3").value
         outputPath = .Range("B4").value
     End With
 
-    ' ƒeƒ“ƒvƒŒ[ƒgƒtƒ@ƒCƒ‹‚Ì‘¶İŠm”F
+    ' ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ã®å­˜åœ¨ç¢ºèª
     If Dir(templatePath) = "" Then
-        MsgBox "ƒeƒ“ƒvƒŒ[ƒgƒtƒ@ƒCƒ‹‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñF" & vbCrLf & templatePath, vbExclamation
+        MsgBox "ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆãƒ•ã‚¡ã‚¤ãƒ«ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ï¼š" & vbCrLf & templatePath, vbExclamation
         Exit Sub
     End If
 
-    ' o—ÍƒtƒHƒ‹ƒ_‚Ì®Œ`‚ÆŠm”F
+    ' å‡ºåŠ›ãƒ•ã‚©ãƒ«ãƒ€ã®æ•´å½¢ã¨ç¢ºèª
     If Right(outputPath, 1) <> "\" Then outputPath = outputPath & "\"
     If Dir(outputPath, vbDirectory) = "" Then
-        MsgBox "o—ÍƒtƒHƒ‹ƒ_‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñF" & vbCrLf & outputPath, vbExclamation
+        MsgBox "å‡ºåŠ›ãƒ•ã‚©ãƒ«ãƒ€ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ï¼š" & vbCrLf & outputPath, vbExclamation
         Exit Sub
     End If
 
-    ' Word‹N“®
+    ' Wordèµ·å‹•
     Set wdApp = CreateObject("Word.Application")
     wdApp.Visible = True
 
-    ' ƒeƒ“ƒvƒŒ[ƒg‚ğŠJ‚­
+    ' ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã‚’é–‹ã
     Set wdDoc = wdApp.Documents.Open(templatePath)
 
-    ' ƒ^ƒOˆê——‚ğ Tags ƒV[ƒg‚©‚ç“Ç‚İæ‚éiB—ñ‚ÆD—ñA3s–ÚˆÈ~j
+    ' ã‚¿ã‚°ä¸€è¦§ã‚’ Tags ã‚·ãƒ¼ãƒˆã‹ã‚‰èª­ã¿å–ã‚‹ï¼ˆBåˆ—ã¨Dåˆ—ã€3è¡Œç›®ä»¥é™ï¼‰
     With Sheets("Tag4")
-        lastRow = .Cells(.Rows.Count, 2).End(xlUp).Row ' B—ñ‚ÌÅIs
-        For i = 3 To lastRow ' © 3s–Ú‚©‚çˆ—
-            tag = .Cells(i, 2).value    ' B—ñi2—ñ–Új
-            value = .Cells(i, 4).value  ' D—ñi4—ñ–Új
+        lastRow = .Cells(.Rows.Count, 2).End(xlUp).Row ' Båˆ—ã®æœ€çµ‚è¡Œ
+        For i = 3 To lastRow ' â† 3è¡Œç›®ã‹ã‚‰å‡¦ç†
+            tag = .Cells(i, 2).value    ' Båˆ—ï¼ˆ2åˆ—ç›®ï¼‰
+            value = .Cells(i, 4).value  ' Dåˆ—ï¼ˆ4åˆ—ç›®ï¼‰
             If tag <> "" Then
-                Call Word’uŠ·(wdDoc, tag, value)
+                Call Wordç½®æ›(wdDoc, tag, value)
             End If
         Next i
     End With
 
-    ' •Û‘¶ƒtƒ@ƒCƒ‹–¼‚ğ¶¬
+    ' ä¿å­˜ãƒ•ã‚¡ã‚¤ãƒ«åã‚’ç”Ÿæˆ
     Dim saveFilePath As String
     Dim fileName As String
-    fileName = Range("NUMBER").value & Range("\¿Ò–¼").value & "•Ê‹L—l®4_" & Format(Now, "yyyymmdd_hhmmss") & ".docx"
+    fileName = Range("NUMBER").value & Range("ç”³è«‹è€…å").value & "åˆ¥è¨˜æ§˜å¼4_" & Format(Now, "yyyymmdd_hhmmss") & ".docx"
     saveFilePath = outputPath & fileName
 
-    ' •Û‘¶
+    ' ä¿å­˜
     wdDoc.SaveAs2 fileName:=saveFilePath
-    MsgBox "o—Í‚ªŠ®—¹‚µ‚Ü‚µ‚½F" & vbCrLf & saveFilePath
+    MsgBox "å‡ºåŠ›ãŒå®Œäº†ã—ã¾ã—ãŸï¼š" & vbCrLf & saveFilePath
 
-    ' i”CˆÓjWordI—¹ˆ—
+    ' ï¼ˆä»»æ„ï¼‰Wordçµ‚äº†å‡¦ç†
     ' wdDoc.Close
     ' wdApp.Quit
 
@@ -65,7 +66,7 @@ Sub Word‚ÖˆêŠ‡·‚µ‚İˆ—4()
     Set wdApp = Nothing
 End Sub
 
-Sub Word’uŠ·(wdDoc As Object, searchText As String, replaceText As String)
+Sub Wordç½®æ›(wdDoc As Object, searchText As String, replaceText As String)
     With wdDoc.Content.Find
         .Text = searchText
         .Replacement.Text = replaceText

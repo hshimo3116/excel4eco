@@ -1,6 +1,7 @@
 Attribute VB_Name = "Module10"
+Option Explicit
 
-Sub Word’uŠ·(wdDoc As Object, searchText As String, replaceText As String)
+Sub Wordâ€™uÅ Â·(wdDoc As Object, searchText As String, replaceText As String)
     With wdDoc.Content.Find
         .Text = searchText
         .Replacement.Text = replaceText

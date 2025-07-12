@@ -1,10 +1,11 @@
 Attribute VB_Name = "Module1"
+Option Explicit
 Function GetWorkbookPath() As String
-    ' •Û‘¶‚³‚ê‚Ä‚¢‚éƒuƒbƒN‚ÌƒpƒX‚ğæ“¾
+    ' ä¿å­˜ã•ã‚Œã¦ã„ã‚‹ãƒ–ãƒƒã‚¯ã®ãƒ‘ã‚¹ã‚’å–å¾—
     If ThisWorkbook.Path <> "" Then
         GetWorkbookPath = ThisWorkbook.Path
     Else
-        GetWorkbookPath = "–¢•Û‘¶"
+        GetWorkbookPath = "æœªä¿å­˜"
     End If
 End Function
 

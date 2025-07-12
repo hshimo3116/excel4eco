@@ -1,10 +1,11 @@
 Attribute VB_Name = "Module7"
+Option Explicit
 Sub Macro1()
-Attribute Macro1.VB_Description = "ƒ}ƒNƒ‹L˜^“ú : 2008/1/24  ƒ†[ƒU[–¼ : ŒQ”nŒ§’¡"
+Attribute Macro1.VB_Description = "ãƒã‚¯ãƒ­è¨˜éŒ²æ—¥ : 2008/1/24  ãƒ¦ãƒ¼ã‚¶ãƒ¼å : ç¾¤é¦¬çœŒåº"
 Attribute Macro1.VB_ProcData.VB_Invoke_Func = "q\n14"
 '
 ' Macro1 Macro
-' ƒ}ƒNƒ‹L˜^“ú : 2008/1/24  ƒ†[ƒU[–¼ : ŒQ”nŒ§’¡
+' ãƒã‚¯ãƒ­è¨˜éŒ²æ—¥ : 2008/1/24  ãƒ¦ãƒ¼ã‚¶ãƒ¼å : ç¾¤é¦¬çœŒåº
 '
 
 '
@@ -12,11 +13,11 @@ Attribute Macro1.VB_ProcData.VB_Invoke_Func = "q\n14"
     Selection.ColumnWidth = 20
 End Sub
 Sub Macro2()
-Attribute Macro2.VB_Description = "ƒ}ƒNƒ‹L˜^“ú : 2008/1/24  ƒ†[ƒU[–¼ : ŒQ”nŒ§’¡"
+Attribute Macro2.VB_Description = "ãƒã‚¯ãƒ­è¨˜éŒ²æ—¥ : 2008/1/24  ãƒ¦ãƒ¼ã‚¶ãƒ¼å : ç¾¤é¦¬çœŒåº"
 Attribute Macro2.VB_ProcData.VB_Invoke_Func = " \n14"
 '
 ' Macro2 Macro
-' ƒ}ƒNƒ‹L˜^“ú : 2008/1/24  ƒ†[ƒU[–¼ : ŒQ”nŒ§’¡
+' ãƒã‚¯ãƒ­è¨˜éŒ²æ—¥ : 2008/1/24  ãƒ¦ãƒ¼ã‚¶ãƒ¼å : ç¾¤é¦¬çœŒåº
 '
 
 '
@@ -25,32 +26,32 @@ Attribute Macro2.VB_ProcData.VB_Invoke_Func = " \n14"
     ActiveSheet.Paste
 End Sub
 
-Sub ”ì—¿’Šo1()
-Attribute ”ì—¿’Šo1.VB_ProcData.VB_Invoke_Func = "G\n14"
+Sub è‚¥æ–™æŠ½å‡º1()
+Attribute è‚¥æ–™æŠ½å‡º1.VB_ProcData.VB_Invoke_Func = "G\n14"
 '
-' ”ì—¿’Šo1 Macro
+' è‚¥æ–™æŠ½å‡º1 Macro
 '
 
-    ' ŒŸõğŒ‚Ì‰Šú‰»
-    With Worksheets("”ì—¿ƒR[ƒh•\")
-        .Range("”ì—¿’ŠoƒGƒŠƒA").AutoFilter Field:=2
-        .Range("”ì—¿’ŠoƒGƒŠƒA").AutoFilter Field:=3
-        .Range("”ì—¿’ŠoƒGƒŠƒA").AutoFilter Field:=4
-        .Range("”ì—¿’ŠoƒGƒŠƒA").AutoFilter Field:=5
+    ' æ¤œç´¢æ¡ä»¶ã®åˆæœŸåŒ–
+    With Worksheets("è‚¥æ–™ã‚³ãƒ¼ãƒ‰è¡¨")
+        .Range("è‚¥æ–™æŠ½å‡ºã‚¨ãƒªã‚¢").AutoFilter Field:=2
+        .Range("è‚¥æ–™æŠ½å‡ºã‚¨ãƒªã‚¢").AutoFilter Field:=3
+        .Range("è‚¥æ–™æŠ½å‡ºã‚¨ãƒªã‚¢").AutoFilter Field:=4
+        .Range("è‚¥æ–™æŠ½å‡ºã‚¨ãƒªã‚¢").AutoFilter Field:=5
     End With
 
-    With Worksheets("”ì—¿ƒR[ƒh•\")
+    With Worksheets("è‚¥æ–™ã‚³ãƒ¼ãƒ‰è¡¨")
         If .Range("B4").value <> "" Then
-            .Range("”ì—¿’ŠoƒGƒŠƒA").AutoFilter Field:=2, Criteria1:="=*" & Range("B4") & "*"
+            .Range("è‚¥æ–™æŠ½å‡ºã‚¨ãƒªã‚¢").AutoFilter Field:=2, Criteria1:="=*" & Range("B4") & "*"
         End If
         If .Range("C4").value <> "" Then
-            .Range("”ì—¿’ŠoƒGƒŠƒA").AutoFilter Field:=3, Criteria1:=.Range("C4").Text
+            .Range("è‚¥æ–™æŠ½å‡ºã‚¨ãƒªã‚¢").AutoFilter Field:=3, Criteria1:=.Range("C4").Text
         End If
         If .Range("D4").value <> "" Then
-            .Range("”ì—¿’ŠoƒGƒŠƒA").AutoFilter Field:=4, Criteria1:=.Range("D4").Text
+            .Range("è‚¥æ–™æŠ½å‡ºã‚¨ãƒªã‚¢").AutoFilter Field:=4, Criteria1:=.Range("D4").Text
         End If
         If .Range("E4").value <> "" Then
-            .Range("”ì—¿’ŠoƒGƒŠƒA").AutoFilter Field:=5, Criteria1:=.Range("E4").Text
+            .Range("è‚¥æ–™æŠ½å‡ºã‚¨ãƒªã‚¢").AutoFilter Field:=5, Criteria1:=.Range("E4").Text
         End If
     End With
 End Sub

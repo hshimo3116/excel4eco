@@ -6,7 +6,8 @@ Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} UserForm3
    ClientTop       =   465
    ClientWidth     =   4560
    OleObjectBlob   =   "UserForm3.frx":0000
-   StartUpPosition =   1  'オーナー フォームの中央
+Option Explicit
+   StartUpPosition =   1  '繧ｪ繝ｼ繝翫�ｼ 繝輔か繝ｼ繝縺ｮ荳ｭ螟ｮ
 End
 Attribute VB_Name = "UserForm3"
 Attribute VB_GlobalNameSpace = False
