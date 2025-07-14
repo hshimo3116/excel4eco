@@ -42,7 +42,7 @@ Sub Wordへ一括差し込み処理()
             tag = .Cells(i, 2).value    ' B列（2列目）
             value = .Cells(i, 4).value  ' D列（4列目）
             If tag <> "" Then
-                Call Word置換(wdDoc, tag, value)
+                Call WordKeywordReplace(wdDoc, tag, value)
             End If
         Next i
     End With
