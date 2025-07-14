@@ -28,7 +28,7 @@ edit:
 	$(EDITOR) "$(MACRO_DIR)"/*
 
 register:
-	git add "$(MACRO_DIR)"/*.bas "$(MACRO_DIR)"/*.cls "$(MACRO_DIR)"/*.frm
+	git add "$(MACRO_DIR)"/*.bas "$(MACRO_DIR)"/*.cls "$(MACRO_DIR)"/*.frx
 	git commit -m "Update VBA sources"
 	# git push
 
